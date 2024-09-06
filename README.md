@@ -43,25 +43,32 @@ MySQL<br></br>
 ## Screenshots
 
 ### Admin Registration
-![Screenshot (9)](https://github.com/vinamrajain19/WorkIndia_assignment/assets/91343225/80e4c96f-07e2-4a73-92b0-8edac870ffde)
-![Screenshot (10)](https://github.com/vinamrajain19/WorkIndia_assignment/assets/91343225/b3ffe032-8af4-4a5d-a32e-9e7bdcb53787)
+![workday_assign-1png](https://github.com/user-attachments/assets/b66be32b-12a0-43d4-974c-47d6ab50f195)
+![workday-assgn-2](https://github.com/user-attachments/assets/a9d8e243-cb1e-4c77-936e-4637e61fde4c)
+
+
 
 ### Admin Login
-![Screenshot (11)](https://github.com/vinamrajain19/WorkIndia_assignment/assets/91343225/77d66b02-3cca-42e9-9299-510b038f4d2d)
+![wrokday-assgn-3](https://github.com/user-attachments/assets/bb2e596b-d598-42c7-a9d0-90e8c08fa212)
+
 
 ### Add Train by Admin
-![Screenshot (13)](https://github.com/vinamrajain19/WorkIndia_assignment/assets/91343225/6b00cc67-5e96-4c0a-a81e-a328ce5cbfe6)
-![Screenshot (14)](https://github.com/vinamrajain19/WorkIndia_assignment/assets/91343225/36fc1310-743a-41c6-a565-62b6a9ebc429)
+![workday-assgn-4](https://github.com/user-attachments/assets/41c9d3af-10e5-44ab-967f-9bd2557ba3fa)
+![workday-assgn-5](https://github.com/user-attachments/assets/cac403ec-5715-4f7d-93f3-a9884b5ec0fb)
+
 
 ### Get Train details
-![Screenshot (18)](https://github.com/vinamrajain19/WorkIndia_assignment/assets/91343225/df3e8098-1e19-48d2-9ba3-06d4d8013af9)
+![workday-assgn-6](https://github.com/user-attachments/assets/e22b9df5-6928-490e-91fc-26a330145e50)
+
 
 ### Book a Seat 
-![Screenshot (19)](https://github.com/vinamrajain19/WorkIndia_assignment/assets/91343225/2a28a463-7979-4486-8e3c-b4a6756d7f6f)
+![workday-assgn-7](https://github.com/user-attachments/assets/504c5fc3-3c23-4457-8cae-dab54f017dd5)
+
 
 ### Get Specific booking details
-![Screenshot (20)](https://github.com/vinamrajain19/WorkIndia_assignment/assets/91343225/489d7c3d-4160-4008-a23e-48608eba50b7)
-![Screenshot (21)](https://github.com/vinamrajain19/WorkIndia_assignment/assets/91343225/b06cb056-e2eb-406b-946b-cc2e9438e926)
+![workday-assgn-8](https://github.com/user-attachments/assets/ea728585-8825-4c39-a1a7-04a874099a8e)
+![workday-assgn-9](https://github.com/user-attachments/assets/c94b3617-4de0-45f4-8ca3-5c4aed68cc86)
+
 
 ## How to handle Race Condition
 
