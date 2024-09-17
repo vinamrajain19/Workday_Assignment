@@ -8,7 +8,8 @@ router.use(authMiddleware);
 
 
 router.post('/book', async (req, res) => {
-  const { trainId, source, destination } = req.body;
+  const { trainId, source, destination, seats_to_be_booked } = req.body;
+  console.log(seats_to_be_booked);
 
   if (!trainId || !source || !destination) {
     return res.status(400).json({ status: 'ERROR', message: 'Missing required fields' });
@@ -17,7 +18,7 @@ router.post('/book', async (req, res) => {
   let transaction;
 
   try {
-  
+
     transaction = await Train.sequelize.transaction();
 
 
@@ -32,12 +33,12 @@ router.post('/book', async (req, res) => {
       return res.status(404).json({ status: 'ERROR', message: 'Train not found' });
     }
 
-    if (train.totalSeats <= 0) {
+    if (train.totalSeats - seats_to_be_booked < 0) {
       await transaction.rollback();
       return res.status(400).json({ status: 'NO_SEATS', message: 'No available seats' });
     }
 
-    train.totalSeats -= 1;
+    train.totalSeats -= seats_to_be_booked;
     await train.save({ transaction });
 
     const booking = await Booking.create(
@@ -61,34 +62,34 @@ router.post('/book', async (req, res) => {
 
 router.use(authMiddleware);
 router.get('/:bookingId', async (req, res) => {
-    const { bookingId } = req.params;
-  
-    try {
-      const booking = await Booking.findByPk(bookingId, {
-        include: [{ model: Train, attributes: ['trainName', 'trainId'] }], 
-      });
-      console.log(booking);
-  
-      if (!booking) {
-        return res.status(404).json({ status: 'ERROR', message: 'Booking not found' });
-      }
-  
-      const { source, destination, seatStatus } = booking;
-      const { trainName, trainId } = booking.Train;
-  
-      const bookingDetails = {
-        source,
-        destination,
-        trainName,
-        trainId,
-        status: seatStatus,
-      };
-  
-      return res.status(200).json({ status: 'SUCCESS', bookingDetails });
-    } catch (error) {
-      return res.status(500).json({ status: 'ERROR', message: error.message });
+  const { bookingId } = req.params;
+
+  try {
+    const booking = await Booking.findByPk(bookingId, {
+      include: [{ model: Train, attributes: ['trainName', 'trainId'] }],
+    });
+    console.log(booking);
+
+    if (!booking) {
+      return res.status(404).json({ status: 'ERROR', message: 'Booking not found' });
     }
-  });
+
+    const { source, destination, seatStatus } = booking;
+    const { trainName, trainId } = booking.Train;
+
+    const bookingDetails = {
+      source,
+      destination,
+      trainName,
+      trainId,
+      status: seatStatus,
+    };
+
+    return res.status(200).json({ status: 'SUCCESS', bookingDetails });
+  } catch (error) {
+    return res.status(500).json({ status: 'ERROR', message: error.message });
+  }
+});
 
 
 module.exports = router;

@@ -16,13 +16,18 @@ router.post('/trains', async (req, res) => {
         }
 
         const { trainName, trainId, source, destination, totalSeats } = req.body;
+
+        console.log(totalSeats);
         const existingTrain = await Train.findOne({ where: { trainId } });
 
         if (existingTrain) {
             return res.status(400).json({ message: 'Train ID already exists', success: false });
         }
 
+
+
         const newTrain = await Train.create({ trainName, trainId, source, destination, totalSeats });
+
 
         return res.status(201).json({
             message: 'Train added successfully',
@@ -39,7 +44,7 @@ router.post('/trains', async (req, res) => {
 router.put('/trains/:trainId', async (req, res) => {
     try {
         const apiKey = req.headers['admin-api-key'];
-        console.log(apiKey);
+
         if (apiKey !== process.env.ADMIN_API_KEY) {
             return res.status(401).json({ message: 'Unauthorized', success: false });
         }

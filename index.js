@@ -1,11 +1,11 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const userRoutes = require('./routes/userRoutes');
-const adminRoutes = require('./routes/adminRoutes');
-const trainRoutes = require('./routes/trainRoutes');
+const userRoutes = require('./routes/userRoute');
+const adminRoutes = require('./routes/adminRoute');
+const trainRoutes = require('./routes/trainRoute');
 const bookingRoutes = require('./routes/bookingRoutes')
-const sequelize = require('./config/database');
+const sequelize = require('./dbconfig/db');
 
 require('dotenv').config();
 
